@@ -1,0 +1,18 @@
+<h1 mat-dialog-title>Adicione um novo item!</h1>
+<div mat-dialog-content>
+  <form class="example-form">
+    <mat-form-field class="modal-input" appearance="fill">
+      <mat-label>Name of currency</mat-label>
+      <input matInput placeholder="currency name" [(ngModel)]='item.name' name="name">
+    </mat-form-field>
+    <mat-form-field class="modal-input" appearance="fill">
+      <mat-label>Category</mat-label>
+      <input matInput placeholder="category"  [(ngModel)]="item.category" name="category">
+    </mat-form-field>
+  </form>
+  <div class="button-container">
+    <button class="modal-button" (click)="createNewItem()" mat-button color="primary" mat-dialog-close>Save</button>
+    <button class="modal-button" mat-button color="warn" mat-dialog-close>Close</button>
+  </div>
+
+</div>

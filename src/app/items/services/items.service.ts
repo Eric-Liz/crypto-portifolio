@@ -22,6 +22,12 @@ export class ItemsService {
       tap(items =>console.log(items))
     );
   }
+  insertNewItem(item:Item){
+    return this.httpClient.post<Item>(this.API,item)
+  }
+  deleteItem(item:Item){
+    return console.log(item._id)
+  }
   listBtc(){
     return this.httpClient.get<Binance[]>(this.BINANCEAPI)
     .pipe(
