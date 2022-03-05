@@ -11,6 +11,7 @@ import { ItemsService } from 'src/app/items/services/items.service';
 export class NewItemModalComponent implements OnInit {
   item:Item = {
     name:'',
+    price:0,
     category:''
   }
   constructor(private itemsService:ItemsService) {

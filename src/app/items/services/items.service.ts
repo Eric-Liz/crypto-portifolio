@@ -25,8 +25,11 @@ export class ItemsService {
   insertNewItem(item:Item){
     return this.httpClient.post<Item>(this.API,item)
   }
+  editItem(item:Item){
+    return this.httpClient.put<Item>(`${this.API}/${item.id}`,item)
+  }
   deleteItem(item:Item){
-    return console.log(item._id)
+    return this.httpClient.delete<Item>(`${this.API}/${item.id}`)
   }
   listBtc(){
     return this.httpClient.get<Binance[]>(this.BINANCEAPI)

@@ -11,12 +11,17 @@
       <!-- Id Column -->
       <ng-container matColumnDef="_id">
         <th mat-header-cell *matHeaderCellDef>ID</th>
-        <td mat-cell *matCellDef="let item">{{ item._id }}</td>
+        <td mat-cell *matCellDef="let item">{{ item.id }}</td>
       </ng-container>
       <!-- Name Column -->
       <ng-container matColumnDef="name">
         <th mat-header-cell *matHeaderCellDef>Name</th>
         <td mat-cell *matCellDef="let item">{{ item.name }}</td>
+      </ng-container>
+      <!-- Price Column -->
+      <ng-container matColumnDef="price">
+        <th mat-header-cell *matHeaderCellDef>price</th>
+        <td mat-cell *matCellDef="let item">{{ item.price }}</td>
       </ng-container>
 
       <!-- Category Column -->
