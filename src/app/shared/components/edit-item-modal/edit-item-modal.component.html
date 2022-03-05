@@ -1,2 +1,23 @@
-<p>edit-item-modal works!</p>
-{{data.name}}
+<h1 mat-dialog-title>Edite o seu item</h1>
+<div mat-dialog-content>
+  <form class="example-form">
+    <mat-form-field class="modal-input" appearance="fill">
+      <mat-label>Name of currency</mat-label>
+      <input matInput placeholder="currency name" maxlength="10" [(ngModel)]='data.name' name="name">
+      <mat-hint align="end">{{data.name.length}} / 10</mat-hint>
+    </mat-form-field>
+    <mat-form-field #number class="modal-input" appearance="fill">
+      <mat-label>Price in USD</mat-label>
+      <input matInput placeholder="ex: 35.93"  [(ngModel)]="data.price" name="category">
+    </mat-form-field>
+    <mat-form-field class="modal-input" appearance="fill">
+      <mat-label>Category</mat-label>
+      <input matInput placeholder="category"  [(ngModel)]="data.category" name="category">
+    </mat-form-field>
+  </form>
+  <div class="button-container">
+    <button class="modal-button" (click)="editItem()" mat-button color="primary" mat-dialog-close>Save</button>
+    <button class="modal-button" mat-button color="warn" mat-dialog-close>Close</button>
+  </div>
+
+</div>

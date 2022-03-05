@@ -7,10 +7,15 @@ import {HttpClient, HttpClientModule} from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-
+import { HeaderComponent } from './template/header/header.component';
+import { NavComponent } from './template/nav/nav.component';
+import { MatSidenavModule} from '@angular/material/sidenav';
+import {MatListModule} from '@angular/material/list'
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HeaderComponent,
+    NavComponent
   ],
   imports: [
     BrowserModule,
@@ -18,6 +23,8 @@ import { AppComponent } from './app.component';
     BrowserAnimationsModule,
     MatToolbarModule,
     HttpClientModule,
+    MatSidenavModule,
+    MatListModule
   ],
   providers: [],
   bootstrap: [AppComponent]

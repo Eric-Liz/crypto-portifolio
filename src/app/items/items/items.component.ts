@@ -22,7 +22,7 @@ export class ItemsComponent implements OnInit,AfterViewInit {
   dataSource = new MatTableDataSource<Item>();
   items$:Observable <Item[]>;
   btc$:Observable<Binance[]>
-  displayedColumns=['_id','name','category','actions'];
+  displayedColumns=['_id','name','price','category','actions'];
   displayedColumns2=['symbol','price'];
 
 
@@ -57,7 +57,9 @@ export class ItemsComponent implements OnInit,AfterViewInit {
     })
   }
   delete(item:Item){
-    this.itemsService.deleteItem(item);
+    this.itemsService.deleteItem(item).subscribe(()=>{
+      window.location.reload();
+    })
   }
   ngOnInit(): void {
   }
