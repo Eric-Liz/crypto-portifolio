@@ -12,7 +12,8 @@ export class NewItemModalComponent implements OnInit {
   item:Item = {
     name:'',
     price:0,
-    category:''
+    category:'',
+    quantity:0
   }
   constructor(private itemsService:ItemsService) {
 
@@ -22,7 +23,7 @@ export class NewItemModalComponent implements OnInit {
   }
   createNewItem(){
     this.itemsService.insertNewItem(this.item).subscribe(()=>{
-      window.location.reload();
+      this.itemsService.reloadComponent();
     })
   }
 }
