@@ -7,8 +7,8 @@ export class CategoryPipe implements PipeTransform {
 
   transform(value:string): string {
     switch(value){
-      case 'hold':return 'savings';
-      case 'swap':return 'currency_exchange';
+      case 'Hold':return 'savings';
+      case 'Swap':return 'currency_exchange';
     }
     return 'savings';
   }
