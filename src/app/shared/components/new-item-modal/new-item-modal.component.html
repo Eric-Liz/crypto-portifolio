@@ -1,19 +1,34 @@
-<h1 mat-dialog-title>Adicione um novo item!</h1>
+<h1 mat-dialog-title>Add new item</h1>
 <div mat-dialog-content>
   <form class="example-form">
-    <mat-form-field class="modal-input" appearance="fill">
-      <mat-label>Name of currency</mat-label>
-      <input matInput placeholder="currency name" maxlength="10" [(ngModel)]='item.name' name="name">
-      <mat-hint align="end">{{item.name.length}} / 10</mat-hint>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Currency name</mat-label>
+      <mat-select name="item" [(ngModel)]="item.name">
+        <mat-option *ngFor="let symbol of symbols" [value]="symbol.viewValue">
+          {{symbol.viewValue}}
+        </mat-option>
+      </mat-select>
     </mat-form-field>
     <mat-form-field #number class="modal-input" appearance="fill">
       <mat-label>Price in USD</mat-label>
-      <input matInput placeholder="ex: 35.93"  [(ngModel)]="item.price" name="category">
+      <input type="number" matInput placeholder="ex: 35.93"  [(ngModel)]="item.price" name="price">
     </mat-form-field>
-    <mat-form-field class="modal-input" appearance="fill">
+
+    <mat-form-field #number class="modal-input" appearance="fill">
+      <mat-label>Quantity coin</mat-label>
+      <input type="number" matInput placeholder="ex: 0.0001"  [(ngModel)]="item.quantity" name="quantity">
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
       <mat-label>Category</mat-label>
-      <input matInput placeholder="category"  [(ngModel)]="item.category" name="category">
+      <mat-select name="category" [(ngModel)]="item.category">
+        <mat-option *ngFor="let category of categories" [value]="category.viewValue">
+          {{category.viewValue}}
+        </mat-option>
+      </mat-select>
     </mat-form-field>
+
   </form>
   <div class="button-container">
     <button class="modal-button" (click)="createNewItem()" mat-button color="primary" mat-dialog-close>Save</button>
