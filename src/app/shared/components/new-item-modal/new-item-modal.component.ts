@@ -11,7 +11,7 @@ import {Select} from 'src/app/items/model/select';
 export class NewItemModalComponent implements OnInit {
   item:Item = {
     name:'',
-    price:0,
+    price:BigInt(0.0),
     category:'',
     quantity:0
   }
@@ -21,6 +21,12 @@ export class NewItemModalComponent implements OnInit {
 
   }
   symbols: Select[] = [
+    {value: 'adausdt', viewValue: 'Cardano'},
+    {value: 'btcusdt', viewValue: 'Bitcoin'},
+    {value: 'ethusd', viewValue: 'Ethereum'},
+    {value: 'adausdt', viewValue: 'Cardano'},
+    {value: 'btcusdt', viewValue: 'Bitcoin'},
+    {value: 'ethusd', viewValue: 'Ethereum'},
     {value: 'adausdt', viewValue: 'Cardano'},
     {value: 'btcusdt', viewValue: 'Bitcoin'},
     {value: 'ethusd', viewValue: 'Ethereum'},

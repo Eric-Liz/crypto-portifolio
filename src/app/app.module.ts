@@ -10,12 +10,14 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './template/header/header.component';
 import { NavComponent } from './template/nav/nav.component';
 import { MatSidenavModule} from '@angular/material/sidenav';
-import {MatListModule} from '@angular/material/list'
+import {MatListModule} from '@angular/material/list';
+import { DashboardComponent } from './template/dashboard/dashboard.component'
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    NavComponent
+    NavComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,
