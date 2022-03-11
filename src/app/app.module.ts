@@ -11,13 +11,15 @@ import { HeaderComponent } from './template/header/header.component';
 import { NavComponent } from './template/nav/nav.component';
 import { MatSidenavModule} from '@angular/material/sidenav';
 import {MatListModule} from '@angular/material/list';
-import { DashboardComponent } from './template/dashboard/dashboard.component'
+import { DashboardComponent } from './template/dashboard/dashboard.component';
+import { CurrenciesComponent } from './template/currencies/currencies.component'
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     NavComponent,
-    DashboardComponent
+    DashboardComponent,
+    CurrenciesComponent
   ],
   imports: [
     BrowserModule,
