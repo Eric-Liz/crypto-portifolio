@@ -1,3 +1,5 @@
+import { NewCurrencyModalComponent } from './../../shared/components/new-currency-modal/new-currency-modal.component';
+import { MatDialog } from '@angular/material/dialog';
 import { Observable } from 'rxjs';
 import { Currency } from './../../items/model/currency';
 import { AfterViewInit, Component, OnInit } from '@angular/core';
@@ -13,7 +15,7 @@ export class CurrenciesComponent implements OnInit,AfterViewInit {
   currencies: Observable<Currency[]>;
   displayedColumns=['symbol','currencyName'];
 
-  constructor(private currencyService:CurrencyService) {
+  constructor(private currencyService:CurrencyService,public dialog: MatDialog) {
    this.currencies = this.currencyService.list();
 
    }
@@ -22,6 +24,11 @@ export class CurrenciesComponent implements OnInit,AfterViewInit {
   }
 
   ngOnInit(): void {
+  }
+  openNewCurrencyModal(){
+    this.dialog.open(NewCurrencyModalComponent, {
+      width: '300px',
+    })
   }
 
 }

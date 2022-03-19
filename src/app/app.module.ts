@@ -15,6 +15,8 @@ import { CurrenciesComponent } from './template/currencies/currencies.component'
 import { DashboardComponent } from './template/dashboard/dashboard.component';
 import { HeaderComponent } from './template/header/header.component';
 import { NavComponent } from './template/nav/nav.component';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatButtonModule } from '@angular/material/button';
 
 @NgModule({
   declarations: [
@@ -34,7 +36,9 @@ import { NavComponent } from './template/nav/nav.component';
     MatListModule,
     MatCardModule,
     MatProgressSpinnerModule,
-    MatTableModule
+    MatTableModule,
+    MatDialogModule,
+    MatButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -10,6 +10,7 @@ import { EditItemModalComponent } from './components/edit-item-modal/edit-item-m
 import { ErrorDialogComponent } from './components/error-dialog/error-dialog.component';
 import { NewItemModalComponent } from './components/new-item-modal/new-item-modal.component';
 import { CategoryPipe } from './pipes/category.pipe';
+import { NewCurrencyModalComponent } from './components/new-currency-modal/new-currency-modal.component';
 
 
 @NgModule({
@@ -18,6 +19,7 @@ import { CategoryPipe } from './pipes/category.pipe';
     CategoryPipe,
     NewItemModalComponent,
     EditItemModalComponent,
+    NewCurrencyModalComponent,
   ],
   imports: [
     CommonModule,

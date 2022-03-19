@@ -1,0 +1,19 @@
+<h1 mat-dialog-title>Add new currency</h1>
+<div mat-dialog-content>
+  <form class="example-form">
+
+    <mat-form-field class="modal-input" appearance="fill">
+      <mat-label>Currency symbol</mat-label>
+      <input matInput placeholder="ex: btc"  [(ngModel)]="currency.symbol" name="symbol">
+    </mat-form-field>
+    <mat-form-field class="modal-input" appearance="fill">
+      <mat-label>Currency name</mat-label>
+      <input matInput placeholder="ex: btc"  [(ngModel)]="currency.currencyName" name="currencyName">
+    </mat-form-field>
+  </form>
+  <div class="button-container">
+    <button class="modal-button" (click)="createNewCurrency()" mat-button color="primary" mat-dialog-close>Save</button>
+    <button class="modal-button" mat-button color="warn" mat-dialog-close>Close</button>
+  </div>
+
+</div>
