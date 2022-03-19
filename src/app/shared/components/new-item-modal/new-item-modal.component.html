@@ -5,8 +5,8 @@
     <mat-form-field appearance="fill">
       <mat-label>Currency name</mat-label>
       <mat-select name="item" [(ngModel)]="item.name">
-        <mat-option *ngFor="let symbol of symbols" [value]="symbol.viewValue">
-          {{symbol.viewValue}}
+        <mat-option *ngFor="let currency of currencies |async as currencies" [value]="currency.currencyName">
+          {{currency.currencyName}}
         </mat-option>
       </mat-select>
     </mat-form-field>

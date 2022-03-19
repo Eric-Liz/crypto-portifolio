@@ -1,3 +1,6 @@
+import { Observable } from 'rxjs';
+import { Currency } from './../../../items/model/currency';
+import { CurrencyService } from 'src/app/items/services/currency.service';
 import { Component, OnInit } from '@angular/core';
 import { Item } from 'src/app/items/model/item';
 import { ItemsService } from 'src/app/items/services/items.service';
@@ -15,22 +18,12 @@ export class NewItemModalComponent implements OnInit {
     category:'',
     quantity:0
   }
+  currencies: Observable<Currency[]>;
 
 
-  constructor(private itemsService:ItemsService) {
-
+  constructor(private itemsService:ItemsService,private currencyService:CurrencyService) {
+    this.currencies = this.currencyService.list();
   }
-  symbols: Select[] = [
-    {value: 'adausdt', viewValue: 'Cardano'},
-    {value: 'btcusdt', viewValue: 'Bitcoin'},
-    {value: 'ethusd', viewValue: 'Ethereum'},
-    {value: 'adausdt', viewValue: 'Cardano'},
-    {value: 'btcusdt', viewValue: 'Bitcoin'},
-    {value: 'ethusd', viewValue: 'Ethereum'},
-    {value: 'adausdt', viewValue: 'Cardano'},
-    {value: 'btcusdt', viewValue: 'Bitcoin'},
-    {value: 'ethusd', viewValue: 'Ethereum'},
-  ];
   categories: Select[]=[
     {value:"hold",viewValue:"Hold"},
     {value:"swap",viewValue:"Swap"}

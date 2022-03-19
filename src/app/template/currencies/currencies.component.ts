@@ -10,11 +10,11 @@ import { CurrencyService } from 'src/app/items/services/currency.service';
 })
 export class CurrenciesComponent implements OnInit,AfterViewInit {
 
-  currencies!: Observable<Currency[]>;
-  displayedColumns=[,'name','price','quantity','category','actions'];
+  currencies: Observable<Currency[]>;
+  displayedColumns=['symbol','currencyName'];
 
   constructor(private currencyService:CurrencyService) {
-   this.currencies
+   this.currencies = this.currencyService.list();
 
    }
 
