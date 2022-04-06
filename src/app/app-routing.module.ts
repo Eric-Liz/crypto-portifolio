@@ -1,17 +1,17 @@
+import { DashboardComponent } from './template/dashboard/dashboard.component';
 import { CurrenciesComponent } from './template/currencies/currencies.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { ItemsComponent } from './items/items/items.component';
-import { HeaderComponent } from './template/header/header.component';
+
 
 const routes: Routes = [
-  {path: '', pathMatch:'full',redirectTo: 'home'},
+  {path: '', pathMatch:'full',redirectTo: 'dashboard'},
   {
     path: 'items',
     loadChildren: () => import('./items/items.module').then(m => m.ItemsModule)
   },
-  {path:"home",
-  component:HeaderComponent
+  {path:"dashboard",
+  component:DashboardComponent
   },
   {path:"currencies",
   component:CurrenciesComponent
