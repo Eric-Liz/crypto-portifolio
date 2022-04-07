@@ -17,6 +17,7 @@ import { HeaderComponent } from './template/header/header.component';
 import { NavComponent } from './template/nav/nav.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatButtonModule } from '@angular/material/button';
+import {ChartModule} from 'primeng/chart';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import { MatButtonModule } from '@angular/material/button';
     MatProgressSpinnerModule,
     MatTableModule,
     MatDialogModule,
-    MatButtonModule
+    MatButtonModule,
+    ChartModule
   ],
   providers: [],
   bootstrap: [AppComponent]

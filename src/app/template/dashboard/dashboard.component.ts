@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Currency } from 'src/app/items/model/currency';
 import { CurrencyService } from 'src/app/items/services/currency.service';
+import {ChartModule} from 'primeng/chart';
 
 
 @Component({
@@ -27,8 +28,22 @@ export class DashboardComponent implements OnInit {
       "actualPrice":4537.32
     },
   ];
+  data: any;
   constructor(private currencyService: CurrencyService) {
    // this.list = this.currencyService.getUsedCurrencies();
+   this.data = {
+    labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+    datasets: [
+        {
+            label: 'First Dataset',
+            data: [65, 59, 80, 81, 56, 55, 40]
+        },
+        {
+            label: 'Second Dataset',
+            data: [28, 48, 40, 19, 86, 27, 90]
+        }
+    ]
+}
   }
 
   ngOnInit(): void {}

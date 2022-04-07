@@ -21,11 +21,7 @@ import { MatTableDataSource } from '@angular/material/table';
 export class ItemsComponent implements OnInit,AfterViewInit {
   dataSource = new MatTableDataSource<Item>();
   items$:Observable <Item[]>;
-  btc$:Observable<Binance[]>
   displayedColumns=['id','name','price','quantity','category','actions'];
-  displayedColumns2=['symbol','price'];
-
-
 
   constructor(private itemsService:ItemsService , public dialog: MatDialog) {
 
@@ -36,7 +32,6 @@ export class ItemsComponent implements OnInit,AfterViewInit {
       return of([])
       })
       );
-    this.btc$=this.itemsService.listBtc();
    }
   ngAfterViewInit(): void {
   }
